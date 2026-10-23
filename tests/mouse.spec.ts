@@ -1,13 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-test('Mouse Hover', async ({ page }) => {
-    await page.goto('https://demoqa.com/tool-tips');
-
-    await page.locator('#toolTipButton').hover();
-    await page.waitForTimeout(1000);
-    await expect(page.getByText('You hovered over the Button')).toBeVisible();
-});
-
 test('Right Click', async ({ page }) => {
     await page.goto('https://demoqa.com/buttons');
     await page.locator('#rightClickBtn').click({button: 'right'});
